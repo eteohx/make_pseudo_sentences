@@ -42,13 +42,13 @@ def jitter(items,perc):
 fc = 8  # Cut-off frequency of the filter
 all_words = words.words()
 
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "C:/Users/emily/Downloads/My First Project-5d01a3f6d789.json"
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "path-to//xxx.json"
 client = texttospeech.TextToSpeechClient()
 voice = texttospeech.types.VoiceSelectionParams(language_code='en-US',name='en-US-Wavenet-C')
 audio_config = texttospeech.types.AudioConfig(audio_encoding=texttospeech.enums.AudioEncoding.LINEAR16,speaking_rate=0.9)
     
 # import text
-file_object  = open(r'G:\My Drive\OldMan_GDL\StimuliFeatures\TextFiles\text1.txt', 'r')
+file_object  = open(r'text1.txt', 'r')
 sentences = file_object.readlines()
 output_format = ['audio','text']
 #maybe parse by fullstop? # 
@@ -124,7 +124,7 @@ for i in range(len(sentences)):
             shuffle_s.append(punc[k])
     shuffle_ss.append(' '.join(shuffle_s))
 
-# text-to-speech: can only write about a minute of speech, so split up the sentences
+# text-to-speech: can only write about a minute of speech, so split up the text into 8-sentence blocks 
 split_into = round(len(shuffle_ss)/8)
 
 if 'text' in output_format:
