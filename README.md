@@ -14,3 +14,5 @@ Output in audio (.wav) and/or text (.txt) format:
 
 (3) .txt file with pronounciation of Jabberwocky words (useful for forced alignment)
 
+
+Uses gibberish module to generate pseudowords, Stanford CoreNLP for POS tagging, Google Cloud Text-to-Speech for synthesizing audio output, and g2p_en for generating pronounciation of Jabberwocky words
