@@ -16,3 +16,8 @@ Output in audio (.wav) and/or text (.txt) format:
 
 
 Uses gibberish module to generate pseudowords, Stanford CoreNLP for POS tagging, Google Cloud Text-to-Speech for synthesizing audio output, and g2p_en for generating pronounciation of Jabberwocky words
+
+
+--------------------------------------------------------------------------------------
+
+Other script in the folder, make_scrambled_sentences.py, is for scrambling sentences various ways
