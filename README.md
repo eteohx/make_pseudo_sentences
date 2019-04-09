@@ -12,4 +12,5 @@ Output in audio (.wav) and/or text (.txt) format:
 
 (2) Scrambled sentences - same words as original sentences but with syntax destroyed
 
-(3) .txt file with pronounciation of Jabberwocky words
+(3) .txt file with pronounciation of Jabberwocky words (useful for forced alignment)
+
