@@ -41,14 +41,14 @@ def swap_selected(l,i):
     return l
     
 # read in word2vec content/funcWords
-fW = pd.read_excel(r'G:\My Drive\matlabFunctions\word2vec\funcWords.xls',header=None)
-cRC = pd.read_excel(r'G:\My Drive\matlabFunctions\word2vec\conceptRowsC.xls',header=None)
+fW = pd.read_excel(r'path-to\word2vec\funcWords.xls',header=None)
+cRC = pd.read_excel(r'path-to\word2vec\conceptRowsC.xls',header=None)
 
 funcWords = list(fW[0])
 conceptRowsC = list(cRC[0])
 
 # read in text to be modified
-file_object  = open(r'G:\My Drive\OldMan_GDL\StimuliFeatures\TextFiles\text1.txt', 'r')
+file_object  = open(r'path-to\text1.txt', 'r')
 sentences = file_object.readlines()
 output_format = ['audio','text']
 
@@ -90,7 +90,7 @@ for sentence in sentences:
     swap_content_words.append(' '.join(s))           
             
 # initialise text-to-speech client
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "C:/Users/emily/Downloads/My First Project-5d01a3f6d789.json"
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "path-to\xxx.json"
 client = texttospeech.TextToSpeechClient()
 voice = texttospeech.types.VoiceSelectionParams(language_code='en-US',name='en-US-Wavenet-C')
 audio_config = texttospeech.types.AudioConfig(audio_encoding=texttospeech.enums.AudioEncoding.LINEAR16,speaking_rate=0.9)
