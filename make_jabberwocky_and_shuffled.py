@@ -17,12 +17,12 @@ Dependencies: nltk, g2p_en (+ tensorflow), stanford CoreNLP parser (+java8),
 """
 import gibberish
 import re
+import os
 from g2p_en import g2p
 from nltk.parse import CoreNLPParser
 from nltk.corpus import words
 from random import choice
 from math import log
-import os
 from google.cloud import texttospeech
 from scipy.io import wavfile
 from scipy.signal import hilbert, find_peaks, butter, filtfilt
