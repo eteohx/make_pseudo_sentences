@@ -1,4 +1,4 @@
-# make_sentences
+# make_pseudo_sentences
 
 Code for reading in a text file containing intact sentences and generating pseudoword and scrambled sentences 
 
