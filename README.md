@@ -20,4 +20,4 @@ Uses gibberish module to generate pseudowords, Stanford CoreNLP for POS tagging,
 
 --------------------------------------------------------------------------------------
 
-Other script in the folder, make_scrambled_sentences.py, is for scrambling sentences various ways
+The other script in the folder, make_scrambled_sentences.py, is for scrambling sentences various ways
