@@ -6,9 +6,10 @@ Input format:
 
 .txt with one sentence on each line
 
-Output:
+Output in audio (.wav) and/or text (.txt) format:
 
 (1) Jabberwocky sentences - same syntax as original sentences but with nouns and verbs replaced by pseudowords
 
 (2) Scrambled sentences - same words as original sentences but with syntax destroyed
-in audio (.wav) and/or text (.txt) format
+
+(3) .txt file with pronounciation of Jabberwocky words
