@@ -125,20 +125,21 @@ for i in range(len(sentences)):
     shuffle_ss.append(' '.join(shuffle_s))
 
 # text-to-speech: can only write about a minute of speech, so split up the text into 8-sentence blocks 
-split_into = round(len(shuffle_ss)/8)
+n_sentences = 8
+split_into = round(len(shuffle_ss)/n_sentences)
 
 if 'text' in output_format:
     for i in range(split_into):
         with open('output_scrambled'+str(i+1)+'.txt','w') as out:
-            for s in shuffle_ss[i*8:i*8+8]:
+            for s in shuffle_ss[i*n_sentences:i*n_sentences+n_sentences]:
                 out.write(s + '\n')
         with open('output_jwocky'+str(i+1)+'.txt','w') as out:
-            for s in jwocky_ss[i*8:i*8+8]:
+            for s in jwocky_ss[i*n_sentences:i*n_sentences+n_sentences]:
                 out.write(s + '\n')
 
 if 'audio' in output_format:
         for i in range(split_into):
-            synthesis_input = texttospeech.types.SynthesisInput(text=' '.join(shuffle_ss[i*8:i*8+8]))
+            synthesis_input = texttospeech.types.SynthesisInput(text=' '.join(shuffle_ss[i*n_sentences:i*n_sentences+n_sentences]))
             response = client.synthesize_speech(synthesis_input, voice, audio_config)
             if os.path.exists('output_scrambled'+str(i+1)+'.wav'):
                os.remove('output_scrambled'+str(i+1)+'.wav')
@@ -148,7 +149,7 @@ if 'audio' in output_format:
             # Write the response to the output file.
                 out.write(response.audio_content)
                 print('Audio content written to file "output_scrambled'+str(i+1)+'.wav"')
-            synthesis_input = texttospeech.types.SynthesisInput(text=' '.join(jwocky_ss[i*8:i*8+8]))
+            synthesis_input = texttospeech.types.SynthesisInput(text=' '.join(jwocky_ss[i*n_sentences:i*n_sentences+n_sentences]))
             response = client.synthesize_speech(synthesis_input, voice, audio_config)
             with open('output_jwocky'+str(i+1)+'.wav',mode='bx') as out:
             # Write the response to the output file.
